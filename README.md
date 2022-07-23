@@ -1,9 +1,9 @@
 # currency-converter
 
-<img align="left" alt="Currency Converter | img" width="80%" style="max-width: 100%;" src="https://github.com/Vladimir-Grinko/currency-converter/blob/master/src/assets/currency-converter.png" />
-
+<img align="left" alt="Currency Converter | img" width="100%" style="max-width: 100%;" src="https://github.com/Vladimir-Grinko/currency-converter/blob/master/src/assets/currency-converter.png" />
 
 ### Конвертер валют с определением локации пользователя
+
 ```
 В зависимости от локации, опретеляется конвертируемая валюта данного региона и устанавливается по умолчанию
 
