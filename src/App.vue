@@ -1,26 +1,44 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div id="#app">
+    <HeaderNav />
+    <Cards />
+    <CurrencyAll />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import { mapActions } from "vuex";
+import HeaderNav from "./components/HeaderNav.vue";
+import Cards from "./components/Cards.vue";
+import CurrencyAll from "./components/CurrencyAll.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    HeaderNav,
+    Cards,
+    CurrencyAll,
+  },
+
+  methods: mapActions(["fetchLocation", "fetchValutes", "setDesktop"]),
+
+  // запрос курса валют, локации и устройства при монтировании
+  async mounted() {
+    this.fetchLocation();
+    this.fetchValutes();
+
+    let vm = this;
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 767) {
+        vm.setDesktop(true);
+      } else {
+        vm.setDesktop(false);
+      }
+    });
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "assets/index.css";
 </style>

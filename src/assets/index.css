@@ -1,0 +1,38 @@
+/* фон приложения */
+body {
+  background: linear-gradient(90deg, #395492, #0099c0, #3dd5a8);
+}
+
+/* анимация стрелки */
+.beauty-effect {
+  animation: effect 4s infinite linear;
+}
+
+@keyframes effect {
+  0%,
+  100% {
+    color: deeppink;
+  }
+  25% {
+    color: deepskyblue;
+  }
+  50% {
+    color: lawngreen;
+  }
+  75% {
+    color: yellow;
+  }
+}
+
+.icon-color {
+  color: rgb(77, 218, 12);
+}
+
+/* вращение изображения флагов */
+.beauty-rotate {
+  transition: all 1s ease;
+}
+
+.beauty-rotate:hover {
+  transform: rotate(360deg);
+}
