@@ -2,6 +2,8 @@
   "name": "currency-converter",
   "version": "0.1.0",
   "private": true,
+  "author": "Vladimir Grinko",
+  "homepage": "https://Vladimir-Grinko.github.io/currency-converter",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
