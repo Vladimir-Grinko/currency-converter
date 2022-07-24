@@ -9,12 +9,18 @@
         :key="location"
       >
         <img
-          :src="location.imageFlagCountry"
-          :alt="location.country"
+          :src="location.country_flag"
+          :alt="location.country_name"
           height="40"
+          style="cursor: pointer"
+          :title="location.country_name"
           class="border border-dark rounded d-inline-block align-text-top"
         />
         {{ location.city }}
+        <i
+          class="fas fa-city mx-2"
+          style="font-size: 20px; color: rgba(245, 245, 245, 1)"
+        ></i>
       </div>
       <!-- форма отображения даты с иконкой календаря -->
       <form class="d-flex">

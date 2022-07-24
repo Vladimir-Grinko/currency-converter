@@ -23,14 +23,16 @@
       >
         <i
           v-if="valute.CharCode === `XDR`"
-          class="fas fa-hand-holding-usd icon-color"
+          :title="valute.Name"
+          class="fas fa-hand-holding-usd icon-color beauty-rotate"
         ></i>
         <img
           v-else
           :src="getSRC(valute.CharCode)"
+          :title="valute.Name"
           alt="flag"
           class="rounded beauty-rotate"
-          style="object-position: center; display: block"
+          style="object-position: center; display: block; cursor: pointer"
         />
         <h5 class="card-title text-white">
           {{ valute.CharCode }}

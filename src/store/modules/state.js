@@ -1,11 +1,7 @@
 import { getToday } from "@/utils/getDate";
 import { getImageFlag } from "@/utils/getImageFlag";
 import { convertedValutes } from "@/utils/convertedValutes";
-import {
-  URL_CURRENCY,
-  URL_LOCATION,
-  URL_COUNTRY_FLAG,
-} from "@/utils/urlRequests";
+import { URL_CURRENCY, URL_LOCATION } from "@/utils/urlRequests";
 
 export default {
   state() {
@@ -129,15 +125,10 @@ export default {
       const res = await fetch(URL_LOCATION);
       const location = await res.json();
 
-      ctx.commit("updateLocation", {
-        location: {
-          ...location,
-          imageFlagCountry: URL_COUNTRY_FLAG + location.countryCode,
-        },
-      });
+      ctx.commit("updateLocation", { location: location });
 
       if (location) {
-        ctx.commit("updateDefaultCurrencyFrom", location.currency);
+        ctx.commit("updateDefaultCurrencyFrom", location.currency.code);
         ctx.commit("updateResult");
       }
     },
