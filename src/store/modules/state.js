@@ -94,7 +94,9 @@ export default {
       state.result = convertedValutes(
         state.defaultCurrencyFrom.Value,
         state.defaultCurrencyInto.Value,
-        state.inputValue
+        state.inputValue,
+        state.defaultCurrencyFrom.Nominal,
+        state.defaultCurrencyInto.Nominal
       );
     },
   },
